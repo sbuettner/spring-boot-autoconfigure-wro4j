@@ -1,9 +1,10 @@
 # spring-boot-autoconfigure-wro4j
-A spring-boot-autoconfigure library that simplifies the usage of the wro4j library at https://code.google.com/p/wro4j/
+A spring-boot-autoconfigure library that simplifies the usage of the [wro4j](https://code.google.com/p/wro4j/) library. You only have to add this library a depedency to your spring-boot-autoconfigure enabled project and a wro4j filter will be registered for you. This library currently depends on the wro4j-extension library which includes several frameworks to handle and process web resources. If you want to exclude some frameworks you currently have to do it yourself using your build systems way of excluding transitive dependencies.
 
-To use this autoconfigure library simply add the following lines to your gradle file. If you are using maven please use the appropriate dependency and repository configuration format.
+## Usage
+If you are having groovy on your classpath the library expects a [wro.groovy](https://code.google.com/p/wro4j/wiki/GroovyWroModel) file in your classpath as the wro descriptor. If groovy is not present it falls back to the [xml based approach](https://code.google.com/p/wro4j/wiki/WroFileFormat). Please visit the [website](https://code.google.com/p/wro4j/) of wro4j for further documentation.
 
-## Gradle
+### Gradle Integration
 Add the following repository and dependency to your ``build.gradle`` build file:
 
 ```
