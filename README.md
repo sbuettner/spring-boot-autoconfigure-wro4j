@@ -14,6 +14,7 @@ repositories {
 
 dependencies {
   // ...
-  compile(group: 'de.infinit', name: 'spring-boot-autoconfigure-wro4j', version: '0.0.2')
+  compile(group: 'de.infinit', name: 'spring-boot-autoconfigure-wro4j', version: 'LATEST_VERSION')
 }
 ```
+You can find the latest binary version here: https://bintray.com/sbuettner/maven/spring-boot-autoconfigure-wro4j/view
