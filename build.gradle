@@ -1,0 +1,71 @@
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'bintray'
+apply plugin: 'maven-publish'
+
+version =  '0.0.1'
+group = 'de.infinit'
+description = 'A spring-boot-autoconfigure library that simplifies the usage of the wro4j library at https://code.google.com/p/wro4j/'
+
+buildscript {
+    ext {
+        binTrayPluginVersion = '0.3'
+    }
+    repositories {
+        maven { url 'http://jcenter.bintray.com' }
+    }
+    dependencies {
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:${binTrayPluginVersion}"
+    }
+}
+
+ext {
+    groovyVersion = '2.2.1'
+    springBootVersion = '1.0.0.RC4'
+    wro4jVersion = '1.7.3'
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'http://repo.spring.io/milestone' }
+    maven { url "http://repo.springsource.org/libs-snapshot" }
+}
+
+dependencies {
+    // Spring Boot Starter Web
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+
+    // Groovy
+    compile("org.codehaus.groovy:groovy-all:${groovyVersion}")
+
+    // WRO
+    compile("ro.isdc.wro4j:wro4j-extensions:${wro4jVersion}")
+
+    // Spring Boot Starter Test
+    testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.10'
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+bintray {
+    user = bintrayUser
+    key = bintrayApiKey
+    publications = ['mavenJava']
+    pkg {
+        repo = 'maven'
+        name = 'spring-boot-autoconfigure-wro4j'
+        desc = getDescription()
+        licenses = ['MIT']
+        labels = ['spring','spring-boot']
+    }
+}

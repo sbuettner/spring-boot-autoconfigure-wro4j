@@ -4,3 +4,10 @@
 *.jar
 *.war
 *.ear
+
+# IntelliJ
+.idea
+*.iml
+
+# Gradle
+gradle.properties
