@@ -1,7 +1,6 @@
 package de.infinit.spring.boot.autoconfigure.wro4j;
 
 import ro.isdc.wro.manager.factory.ConfigurableWroManagerFactory;
-
 import java.util.Properties;
 
 public class SimpleWroManagerFactory extends ConfigurableWroManagerFactory {

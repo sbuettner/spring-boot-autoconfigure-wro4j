@@ -3,7 +3,6 @@ package de.infinit.spring.boot.autoconfigure.wro4j;
 import org.springframework.core.io.ClassPathResource;
 import ro.isdc.wro.extensions.model.factory.GroovyModelFactory;
 import ro.isdc.wro.model.factory.WroModelFactory;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
