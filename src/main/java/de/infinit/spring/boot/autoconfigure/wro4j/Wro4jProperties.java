@@ -2,7 +2,7 @@ package de.infinit.spring.boot.autoconfigure.wro4j;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties(name = "wro4j")
+@ConfigurationProperties("wro4j")
 public class Wro4jProperties {
 
     private boolean disableCache;

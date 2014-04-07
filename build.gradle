@@ -1,9 +1,8 @@
 apply plugin: 'java'
-apply plugin: 'groovy'
 apply plugin: 'bintray'
 apply plugin: 'maven-publish'
 
-version =  '0.0.2'
+version =  '0.0.3'
 group = 'de.infinit'
 description = 'A spring-boot-autoconfigure library that simplifies the usage of the wro4j library at https://code.google.com/p/wro4j/'
 
@@ -21,8 +20,8 @@ buildscript {
 
 ext {
     groovyVersion = '2.2.1'
-    springBootVersion = '1.0.0.RC4'
-    wro4jVersion = '1.7.3'
+    springBootVersion = '1.0.1.RELEASE'
+    wro4jVersion = '1.7.4'
 }
 
 repositories {
@@ -31,18 +30,29 @@ repositories {
     maven { url "http://repo.springsource.org/libs-snapshot" }
 }
 
+configurations{
+    provided
+}
+
 dependencies {
     // Spring Boot Starter Web
     compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
 
-    // Groovy
-    compile("org.codehaus.groovy:groovy-all:${groovyVersion}")
-
     // WRO
-    compile("ro.isdc.wro4j:wro4j-extensions:${wro4jVersion}")
+    compile("ro.isdc.wro4j:wro4j-core:${wro4jVersion}")
+
+    // WRO Extensions
+    provided("ro.isdc.wro4j:wro4j-extensions:${wro4jVersion}")
 
     // Spring Boot Starter Test
     testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+}
+
+//Include provided for compilation
+sourceSets {
+    main.compileClasspath += configurations.provided
+    test.compileClasspath += configurations.provided
+    test.runtimeClasspath += configurations.provided
 }
 
 task wrapper(type: Wrapper) {
