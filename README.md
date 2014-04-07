@@ -4,6 +4,8 @@ A spring-boot-autoconfigure library that simplifies the usage of the [wro4j](htt
 ## Usage
 If you are having groovy on your classpath the library expects a [wro.groovy](https://code.google.com/p/wro4j/wiki/GroovyWroModel) file in your classpath as the wro descriptor. If groovy is not present it falls back to the [xml based approach](https://code.google.com/p/wro4j/wiki/WroFileFormat). Please visit the [website](https://code.google.com/p/wro4j/) of wro4j for further documentation.
 
+[ ![Download](https://api.bintray.com/packages/sbuettner/maven/spring-boot-autoconfigure-wro4j/images/download.png) ](https://bintray.com/sbuettner/maven/spring-boot-autoconfigure-wro4j/_latestVersion)
+
 ### Gradle Integration
 Add the following repository and dependency to your ``build.gradle`` build file:
 
