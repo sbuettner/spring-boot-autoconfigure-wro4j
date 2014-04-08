@@ -21,9 +21,6 @@ dependencies {
   // This project
   compile(group: 'de.infinit', name: 'spring-boot-autoconfigure-wro4j', version: 'LATEST_VERSION')
   
-  // WRO Extensions - exclude the libraries you dont need support for.
-  compile("ro.isdc.wro4j:wro4j-extensions:${wro4jVersion}")
-  
 }
 ```
 You can find the latest binary version of this library here: https://bintray.com/sbuettner/maven/spring-boot-autoconfigure-wro4j/view

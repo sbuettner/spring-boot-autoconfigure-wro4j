@@ -17,7 +17,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
-import static junit.framework.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class IntegrationTest {
 
