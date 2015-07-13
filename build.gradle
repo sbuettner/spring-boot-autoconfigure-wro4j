@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'bintray'
 apply plugin: 'maven-publish'
-apply plugin: 'eclipse'
+
 version =  '0.0.5'
 group = 'de.infinit'
 description = 'A spring-boot-autoconfigure library that simplifies the usage of the wro4j library at https://code.google.com/p/wro4j/'
@@ -32,15 +32,15 @@ repositories {
 
 dependencies {
     // Spring Boot Starter Web
-    //compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
 
     // WRO Extensions
     compile("ro.isdc.wro4j:wro4j-extensions:${wro4jVersion}")
 
     // Spring Boot Starter Test
-    //testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+    testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
 }
-/*
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
@@ -61,4 +61,3 @@ bintray {
         labels = ['spring','spring-boot']
     }
 }
-*/
