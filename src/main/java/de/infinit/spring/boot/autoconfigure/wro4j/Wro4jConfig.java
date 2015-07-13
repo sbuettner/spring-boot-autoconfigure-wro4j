@@ -37,6 +37,8 @@ public class Wro4jConfig {
         properties.put(ConfigConstants.disableCache.name(), String.valueOf(wro4jProperties.isDisableCache()));
         properties.put(ConfigConstants.cacheUpdatePeriod, String.valueOf(wro4jProperties.getCacheUpdatePeriod()));
         properties.put(ConfigConstants.resourceWatcherUpdatePeriod, String.valueOf(wro4jProperties.getResourceWatcherUpdatePeriod()));
+        properties.put(ConfigConstants.cacheGzippedContent, String.valueOf(wro4jProperties.isCacheGzippedContent()));
+        properties.put(ConfigConstants.parallelPreprocessing, String.valueOf(wro4jProperties.isParallelProcessing()));
         return properties;
     }
 
