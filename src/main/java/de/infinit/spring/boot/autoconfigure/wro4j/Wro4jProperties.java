@@ -27,6 +27,10 @@ public class Wro4jProperties {
 
     private String namingStrategy = "hashEncoder-CRC32";
 
+    private boolean cacheGzippedContent = true;
+    
+    private boolean parallelProcessing = false;
+    
     public boolean isDisableCache() {
         return disableCache;
     }
@@ -114,4 +118,20 @@ public class Wro4jProperties {
     public void setNamingStrategy(String namingStrategy) {
         this.namingStrategy = namingStrategy;
     }
+
+	public boolean isCacheGzippedContent() {
+		return cacheGzippedContent;
+	}
+
+	public void setCacheGzippedContent(boolean cacheGzippedContent) {
+		this.cacheGzippedContent = cacheGzippedContent;
+	}
+
+	public boolean isParallelProcessing() {
+		return parallelProcessing;
+	}
+
+	public void setParallelProcessing(boolean parallelProcessing) {
+		this.parallelProcessing = parallelProcessing;
+	}
 }
